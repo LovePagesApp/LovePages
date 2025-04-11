@@ -1,14 +1,65 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Love Pages</title>
-  </head>
-  <body class="bg-gray-100">
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Love Pages</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="app">
+    <!-- Welcome Screen -->
+    <section id="welcome" class="screen active">
+      <div class="center">
+        <img src="reading-illustration.svg" alt="Reading" class="illustration" />
+        <h1>Books are the key to a healthy mind</h1>
+        <p>Read and log your favourite books, all in one beautiful place.</p>
+        <button onclick="showScreen('login')">Login</button>
+        <button onclick="showScreen('register')">Register</button>
+      </div>
+    </section>
+
+    <!-- Login Screen -->
+    <section id="login" class="screen">
+      <div class="center form">
+        <h2>Welcome Back!</h2>
+        <p>Log in to continue tracking your reading journey</p>
+        <input type="email" placeholder="Email" />
+        <input type="password" placeholder="Password" />
+        <button onclick="showScreen('library')">Login</button>
+        <p class="small-text">No account? <span onclick="showScreen('register')">Register</span></p>
+      </div>
+    </section>
+
+    <!-- Register Screen -->
+    <section id="register" class="screen">
+      <div class="center form">
+        <h2>Create Your Account</h2>
+        <p>Start your reading journey today</p>
+        <input type="text" placeholder="Name" />
+        <input type="email" placeholder="Email" />
+        <input type="password" placeholder="Password" />
+        <input type="password" placeholder="Confirm Password" />
+        <button onclick="showScreen('library')">Register</button>
+        <p class="small-text">Already have an account? <span onclick="showScreen('login')">Login</span></p>
+      </div>
+    </section>
+
+    <!-- Library Screen -->
+    <section id="library" class="screen">
+      <div class="center">
+        <h1>Welcome back!</h1>
+        <div class="tabs">
+          <button onclick="toggleBooks('read')">Read</button>
+          <button onclick="toggleBooks('tbr')">To Be Read</button>
+        </div>
+        <ul id="bookList"></ul>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>
