@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Book Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Book Tracker</h1>
+        <button id="logout">Logout</button>
+    </header>
+    <main>
+        <section>
+            <h2>Search Books</h2>
+            <input type="text" id="search-input" placeholder="Search by title...">
+            <button onclick="searchBooks()">Search</button>
+            <div id="search-results"></div>
+        </section>
+        <section>
+            <h2>Books I've Read</h2>
+            <div id="read-books"></div>
+        </section>
+        <section>
+            <h2>Books I Want to Read</h2>
+            <div id="want-to-read-books"></div>
+        </section>
+    </main>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
